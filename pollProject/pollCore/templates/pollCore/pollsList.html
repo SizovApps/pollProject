@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container mt-5">
+    <!-- Card deck -->
+<h1>Все голосования:</h1>
+<div class="mt-5">
+    {% for curPolls in polls %}
+
+<div class="card-deck">
+
+    {% for poll in curPolls %}
+    <div class="card mb-4">
+
+    <!--Card image-->
+    <div class="view overlay">
+      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg" alt="Card image cap">
+      <a href="#!">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+
+    <!--Card content-->
+    <div class="card-body">
+
+      <!--Title-->
+      <h4 class="card-title">{{ poll.title }}</h4>
+      <!--Text-->
+      <p class="card-text">{{ poll.description|truncatewords:20 }}</p>
+      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+        <a href="{{ poll.get_absolute_url }}"><button type="button" class="btn btn-primary">Посмотреть</button></a>
+
+    </div>
+    <div class="card-footer text-muted text-center mt-4">
+      {{ poll.timeOfBeg }} - {{ poll.timeOfEnd }}
+    </div>
+
+  </div>
+    {% endfor %}
+    </div>
+
+  <!-- Card -->
+
+  <!-- Card -->
+
+  <!-- Card -->
+
+  <!-- Card -->
+
+
+
+    {% endfor %}
+</div>
+</div>
+<!-- Card deck -->
+
+{% endblock %}
+
+

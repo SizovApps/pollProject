@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 
 
 class Poll(models.Model):
@@ -8,3 +9,12 @@ class Poll(models.Model):
     numberOfVoters = models.PositiveIntegerField()
     timeOfBeg = models.DateTimeField()
     timeOfEnd = models.DateTimeField()
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('poll_detail_url', kwargs={'slug': self.slug})
+
+    class Meta:
+        ordering = ['-timeOfBeg']
