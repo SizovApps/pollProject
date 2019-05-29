@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="position-relative overflow-hidden p-3 text-center bg-light">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">TrustChain</h1>
+    <p class="lead font-weight-normal my-3">Создавайте свои анонимные, прозрачные, абсолютно честные голосования.</p>
+    <a class="btn btn-outline-secondary" href="{% url 'register' %}">Зарегистрироваться</a>
+  </div>
+</div>
+{% endblock %}
